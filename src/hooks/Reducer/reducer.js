@@ -1,24 +1,22 @@
 
 export const initialState = {
-    showDone: false,
-    sortBy: 'difficulty',
-    taskPerPage: 3,
+    showCompleted: false,
+    sort: 'difficulty',
+    itemsPerPage: 3,
 
 }
 
 
 export const stateReducer = (state, action) => {
-
-    // console.log(state, action)
     switch (action.type) {
         case "changeShow": {
-            return { ...state, showDone: action.payload }
+            return { ...state, showCompleted: action.payload }
         }
         case "changeSort": {
-            return { ...state, sortBy: action.payload }
+            return { ...state, sort: action.payload }
         }
         case "changeTasksNum": {
-            return { ...state, taskPerPage: action.payload }
+            return { ...state, itemsPerPage: action.payload }
         }
         default: return state
     }

@@ -104,7 +104,6 @@ const Todo = () => {
   return (
     <Flex direction="column" justify="center" align={"center"} mih="80vh">
       <SignUp />
-      {/* <div className="grid-container"> */}
       <LoginForm />
       <Auth capability="read">
         <Title
@@ -179,7 +178,6 @@ const Todo = () => {
        
         </Grid.Col>
       </Grid>
-      {/* </div> */}
     </Flex>
   );
 };
