@@ -25,7 +25,7 @@ export default function SettingPage() {
 
                         <Switch
                             onChange={(e) => dispatch({ type: 'changeShow', payload: e.currentTarget.checked })}
-                            checked={settings.showDone}
+                            checked={settings.showCompleted}
                             label="Show Completed ToDos"
                             style={{ marginBottom: '16px' }}
                             data-testid="show-completed-switch"
@@ -33,7 +33,7 @@ export default function SettingPage() {
 
                         <NumberInput
                             onChange={(value) => dispatch({ type: 'changeTasksNum', payload: value })}
-                            placeholder={settings.taskPerPage}
+                            placeholder={settings.itemsPerPage}
                             label="Items Per page"
                             style={{ marginBottom: '16px' }}
                             data-testid="items-per-page-input"
@@ -41,7 +41,7 @@ export default function SettingPage() {
 
                         <TextInput
                             onChange={(e) => dispatch({ type: 'changeSort', payload: e.target.value })}
-                            placeholder={settings.sortBy}
+                            placeholder={settings.sort}
                             label="Sort Keyword"
                             style={{ marginBottom: '24px' }}
                             data-testid="sort-keyword-input"
@@ -64,10 +64,10 @@ export default function SettingPage() {
                             </Text>
                         </Card.Section>
                         <Text style={{ marginBottom: '8px' }}>
-                            {settings.showDone ? 'Show' : 'Hide'} Completed ToDos
+                            {settings.showCompleted? 'Show' : 'Hide'} Completed ToDos
                         </Text>
-                        <Text style={{ marginBottom: '8px' }}>Items Per page: {settings.taskPerPage}</Text>
-                        <Text>Sort Keyword: {settings.sortBy}</Text>
+                        <Text style={{ marginBottom: '8px' }}>Items Per page: {settings.itemsPerPage}</Text>
+                        <Text>Sort Keyword: {settings.sort}</Text>
                     </Card>
                 </Grid.Col>
             </Grid>

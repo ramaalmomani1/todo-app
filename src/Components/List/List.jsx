@@ -7,16 +7,16 @@ export default function List({ list, toggleComplete, deleteItem }) {
   const [currentPage, setCurrentPage] = useState(1);
   const { settings } = useContext(SettingContext);
 
-  let toRenderList = settings.showDone
+  let toRenderList = settings.showCompleted
     ? list
     : list.filter((task) => !task.completed);
 
-  let startIndex = settings.taskPerPage * (currentPage - 1);
-  let endIndex = startIndex + settings.taskPerPage;
+  let startIndex = settings.itemsPerPage * (currentPage - 1);
+  let endIndex = startIndex + settings.itemsPerPage;
   let currentPageRender = toRenderList
     ? toRenderList.slice(startIndex, endIndex)
     : [];
-  let PaginationPages = Math.ceil(toRenderList.length / settings.taskPerPage);
+  let PaginationPages = Math.ceil(toRenderList.length / settings.itemsPerPage);
 
   return (
     <div>
