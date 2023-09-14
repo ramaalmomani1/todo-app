@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import useForm from "../../hooks/form";
-import './todo.css'
+import "./todo.css";
 import {
   Title,
   Grid,
@@ -89,7 +89,7 @@ const Todo = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
   useEffect(() => {
     let incompleteCount = data.list.filter((item) => !item.complete).length;
     setIncomplete(incompleteCount);
@@ -175,7 +175,6 @@ const Todo = () => {
               deleteItem={deleteItem}
             />
           </Auth>
-       
         </Grid.Col>
       </Grid>
     </Flex>

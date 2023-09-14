@@ -14,6 +14,7 @@ export default function SignUp() {
 
   async function handleSignupSub(e) {
     e.preventDefault();
+    console.log(login)
     try {
       let res = await axios.post("https://hoehoehooo.onrender.com/signup", {
         username: usernameS,
